@@ -1,0 +1,488 @@
+﻿/* ==========================================================================
+   PORTFOLIO STYLESHEET - KARAN
+   Theme: Light Orange, Off-White & Dark Grey
+   Layout: 95% Screen Size Hero Image (No animations/lasers) + Simple Portfolio
+   ========================================================================== */
+
+:root {
+  /* Dark Grey Palette */
+  --bg-dark: #101114;
+  --bg-surface: #16181e;
+  --bg-card: #1c1e26;
+  --bg-card-hover: #242732;
+
+  /* Off-White Text & Borders */
+  --text-pure: #ffffff;
+  --text-offwhite: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-subtle: rgba(248, 250, 252, 0.1);
+  --border-medium: rgba(248, 250, 252, 0.18);
+
+  /* Light Orange Accent (Matching "HEY YOU" in Photo) */
+  --orange-light: #fb923c;
+  --orange-primary: #f97316;
+  --orange-dark: #ea580c;
+  --orange-glow: rgba(249, 115, 22, 0.25);
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-body);
+  font-family: var(--font-main);
+  line-height: 1.65;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Text Utility */
+.text-orange {
+  color: var(--orange-primary);
+}
+
+/* ==========================================================================
+   BEFORE SCROLL: 95% SCREEN SIZE HERO IMAGE ONLY
+   (No animation, no lasers, no blinking, no badges)
+   ========================================================================== */
+.hero-screen-95 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5vh 2.5vw;
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+.photo-container-95 {
+  width: 95vw;
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f3f3; /* Seamless match with the photo's studio backdrop */
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-subtle);
+}
+
+.hero-photo-95 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Simple scroll hint at the bottom */
+.simple-scroll-hint {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.hint-arrow {
+  color: var(--orange-primary);
+}
+
+/* ==========================================================================
+   ABOUT ME SECTION
+   ========================================================================== */
+.section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.about-section {
+  padding-top: 5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-header {
+  margin-bottom: 2rem;
+}
+
+.sub-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-primary);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-pure);
+  margin-bottom: 0.6rem;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--orange-light);
+  line-height: 1.45;
+}
+
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border-left: 4px solid var(--orange-primary);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  color: var(--text-pure);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.about-lead strong {
+  color: var(--text-pure);
+}
+
+.about-body {
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.about-body:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   SECTION COMMON STYLES
+   ========================================================================== */
+.section-title-wrap {
+  margin-bottom: 2.75rem;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-pure);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.orange-bar {
+  width: 50px;
+  height: 3px;
+  background-color: var(--orange-primary);
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   SKILLS SECTION (Clean & Simple)
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.skill-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: border-color 0.2s ease;
+}
+
+.skill-box:hover {
+  border-color: var(--border-medium);
+}
+
+.skill-box-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.skill-list li {
+  font-size: 0.94rem;
+  color: var(--text-body);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.skill-list li::before {
+  content: '•';
+  color: var(--orange-primary);
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION (Clean & Simple)
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.project-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+
+.project-box:hover {
+  border-color: var(--border-medium);
+}
+
+.project-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--orange-light);
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 0.75rem;
+}
+
+.project-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-pills span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   EDUCATION SECTION (Clean & Simple)
+   ========================================================================== */
+.education-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+}
+
+.edu-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--orange-light);
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.edu-degree {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  margin-bottom: 0.25rem;
+}
+
+.edu-major {
+  font-size: 1.05rem;
+  color: var(--orange-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.edu-status {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.edu-desc {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-tags span {
+  font-size: 0.8rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   FOOTER (Simple & Minimal)
+   ========================================================================== */
+.site-footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  padding: 2.5rem 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.to-top-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--orange-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.to-top-link:hover {
+  color: var(--orange-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-screen-95 {
+    padding: 2vh 2vw;
+  }
+
+  .photo-container-95 {
+    width: 96vw;
+    height: 85vh;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .about-card,
+  .education-card,
+  .skill-box,
+  .project-box {
+    padding: 1.5rem;
+  }
+}
