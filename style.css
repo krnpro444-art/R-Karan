@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PORTFOLIO STYLESHEET - KARAN
    Theme: Light Orange, Off-White & Dark Grey
    Layout: 95% Screen Size Hero Image (No animations/lasers) + Simple Portfolio
@@ -468,16 +468,21 @@ body {
 @media (max-width: 768px) {
   .hero-screen-95 {
     padding: 2vh 2vw;
+    width: auto;
+    height: auto;
   }
 
   .photo-container-95 {
-    width: 96vw;
-    height: 85vh;
+    width: auto;
+    height: auto;
   }
 
   .section {
     padding: 4rem 0;
   }
+  .simple-scroll-hint {
+  display: none;
+}
 
   .about-card,
   .education-card,
@@ -486,3 +491,4 @@ body {
     padding: 1.5rem;
   }
 }
+
